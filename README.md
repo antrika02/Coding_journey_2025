@@ -1,2 +1,18 @@
 # Coding_journey_2025
-Daily DSA practice repository with solutions in Java and other languages. Covers arrays, strings, recursion, DP, graphs, trees, and more. Aimed at improving problem-solving skills, coding efficiency, and interview preparation through consistent practice.
+This repository is a collection of my daily Data Structures and Algorithms (DSA) solutions, primarily in Java. The goal is to stay consistent, strengthen problem-solving skills, and prepare effectively for coding interviews.
+
+Each solution is organized by topic and problem, covering areas like:
+
+Arrays & Strings
+
+Recursion & Backtracking
+
+Dynamic Programming
+
+Linked Lists & Trees
+
+Graphs & Greedy Algorithms
+
+Stack, Queue & Heap problems
+
+🔹 By committing every day, this repo serves as both a learning journal and a resource for revision. Over time, it will grow into a structured set of solutions useful for interview prep and competitive programming.
