@@ -140,12 +140,29 @@ public static int lastOccurence(int arr[], int key, int i){
      return lastOccurence(arr, key, i-1);
 }
 public static int square(int x, int n){
-    
+    if (n == 0){
+        return 1;
+    }
+    int nm1 = square(x, n-1);
+    int nm2;
+    return nm2 = x * nm1;
+
+}
+
+public static int tilingProblem(int n){
+    if (n == 0 || n==1){
+        return n;
+    }
+    int verticalTiles = tilingProblem(n-1);
+    int horizontalTiles =   tilingProblem(n-2);
+
+    int totWays = verticalTiles + horizontalTiles;
+    return totWays;
 }
 
     public static void main(String args[]) {
-        int arr[] = {3,6,7,10,9,10,14};
-        System.out.println(lastOccurence(arr,10,arr.length -1));
+        int result = tilingProblem(3);
+        System.out.println("Total number of ways are "+ result);
     }
 }
 
