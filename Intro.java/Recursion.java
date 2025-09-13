@@ -83,12 +83,48 @@ public class Recursion {
             return i + sumN(i + 1, n); // recursive case
         }
     }
+    public static int fibonacciNumber(int n){
+        if (n==0 || n==1){
+            return n;
+        }
+        int nm1 = fibonacciNumber(n-1);
+        int nm2 = fibonacciNumber(n-2);
+        return nm1+nm2;
+    }
+    // public static boolean sortedArray(int arr[] , int i){
+    //     if (i == arr.length-1){
+    //         return true;
+    //     }
+    //     if(arr[i] > arr[i+1]){
+    //         return false;
+    //     }
+    //     return sortedArray(arr[], n+1);
+        
+    // }
+
+
+
+    public static boolean sortedArray(int arr[], int i) {
+        if (i == arr.length - 1) {
+            return true;
+        }
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+        return sortedArray(arr, i + 1);
+    }
 
     public static void main(String args[]) {
-        int result = sumN(1, 10);
-        System.out.println("Sum of first 10 numbers is: " + result);
+        int arr[] = {3, 6, 7, 9, 10, 14};
+        System.out.println(sortedArray(arr, 0));
     }
 }
+
+//     public static void main(String args[]) {
+//         int arr[] = {3,6,7,9,10,14};
+//         System.out.println(sortedArray(arr,0));
+//     }
+// }
 
 
 
