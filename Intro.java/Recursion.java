@@ -91,40 +91,63 @@ public class Recursion {
         int nm2 = fibonacciNumber(n-2);
         return nm1+nm2;
     }
-    // public static boolean sortedArray(int arr[] , int i){
-    //     if (i == arr.length-1){
-    //         return true;
-    //     }
-    //     if(arr[i] > arr[i+1]){
-    //         return false;
-    //     }
-    //     return sortedArray(arr[], n+1);
-        
-    // }
-
-
-
-    public static boolean sortedArray(int arr[], int i) {
-        if (i == arr.length - 1) {
+    public static boolean sortedArray(int arr[] , int i){
+        if (i == arr.length-1){
             return true;
         }
-        if (arr[i] > arr[i + 1]) {
+        if(arr[i] > arr[i+1]){
             return false;
         }
-        return sortedArray(arr, i + 1);
+        return sortedArray(arr, i+1);
+        
     }
 
-    public static void main(String args[]) {
-        int arr[] = {3, 6, 7, 9, 10, 14};
-        System.out.println(sortedArray(arr, 0));
-    }
-}
+
+
+//     public static boolean sortedArray(int arr[], int i) {
+//         if (i == arr.length - 1) {
+//             return true;
+//         }
+//         if (arr[i] > arr[i + 1]) {
+//             return false;
+//         }
+//         return sortedArray(arr, i + 1);
+//     }
 
 //     public static void main(String args[]) {
-//         int arr[] = {3,6,7,9,10,14};
-//         System.out.println(sortedArray(arr,0));
+//         int arr[] = {3, 6, 7, 9, 10, 14};
+//         System.out.println(sortedArray(arr, 0));
 //     }
 // }
+public static int firstOccurence(int arr[], int key, int i){
+    if (i == arr.length-1){
+        return -1;
+    }
+    if (arr[i] == key){
+        return i;
+    }
+    return firstOccurence(arr, key, i+1);
+    
+}
+public static int lastOccurence(int arr[], int key, int i){
+    if(i == 0){
+        return -1;
+    }
+    if (arr[i]==key){
+        return i;
+    }
+     i = arr.length - 1;
+     return lastOccurence(arr, key, i-1);
+}
+public static int square(int x, int n){
+    
+}
+
+    public static void main(String args[]) {
+        int arr[] = {3,6,7,10,9,10,14};
+        System.out.println(lastOccurence(arr,10,arr.length -1));
+    }
+}
 
 
 
