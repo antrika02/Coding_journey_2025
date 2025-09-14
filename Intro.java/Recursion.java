@@ -159,11 +159,41 @@ public static int tilingProblem(int n){
     int totWays = verticalTiles + horizontalTiles;
     return totWays;
 }
-
-    public static void main(String args[]) {
-        int result = tilingProblem(3);
-        System.out.println("Total number of ways are "+ result);
+// public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]){
+//     if(idx == str.length());
+//     {
+//         System.out.println(newStr);
+//         return;
+//     }
+//     char currchar = str.charAt(idx);
+//     if (map[currchar - 'a']== true){
+//         removeDuplicates(str, idx+1, newStr.append(currchar),map);
+//     }
+// }
+ public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
+        if (idx == str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+        char currChar = str.charAt(idx);
+        if (map[currChar - 'a'] == false) { // If character not yet encountered
+            map[currChar - 'a'] = true;
+            removeDuplicates(str, idx + 1, newStr.append(currChar), map);
+        } else {
+            removeDuplicates(str, idx + 1, newStr, map); // Skip duplicate
+        }
     }
+    public static void main(String args[]) {
+        String str = "appnnacollege";
+        removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
+    }
+}
+
+   
+    // public static void main(String args[]) {
+    //    String str = "appnnacollege";
+    //    removeDuplicates(str, 0, new StringBuilder(" "), new boolean [26]);
+    // }
 }
 
 
