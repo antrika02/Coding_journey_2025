@@ -72,33 +72,50 @@ public class StriversArray {
 
 
 
-public static int linearSearch(int arr[], int key){
-        for (int i = 0; i < arr.length; i++){
-            if(arr[i] == key){
-                return i;
-            }
-        }
-        return -1;
-    } 
+// public static int linearSearch(int arr[], int key){
+//         for (int i = 0; i < arr.length; i++){
+//             if(arr[i] == key){
+//                 return i;
+//             }
+//         }
+//         return -1;
+//     } 
+
+
+
+
+
+
+public static int missing(int arr[]){
+    int sum = 0;
+    int n = arr.length + 1;
+    int expected = n*(n+1)/2;
+    for (int i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    int miss = expected - sum;
+    return miss;
+}
+
     public static void main(String args[]){
-        int[] arr = new int[10];
+        int[] arr = new int[9];
         
         arr[0] = 1;
-        arr[1] = 5;
-        arr[2] = 0;
-        arr[3] = 25;
-        arr[4] = 0;
-        arr[5] = 95;
-        arr[6] = 0;
-        arr[7] = 19;
-        arr[8] = 40;
-        arr[9] = 98;
+        arr[1] = 2;
+        arr[2] = 3;
+        arr[3] = 4;
+        arr[4] = 5;
+       
+        arr[5] = 6;
+        arr[6] = 8;
+        arr[7] = 9;
+        arr[8] = 10;
 
         // boolean result = sorted(arr);
-         int result = linearSearch(arr,25);
+         int result =missing(arr);
 
         //  for (int i = 0; i < arr.length; i++){
-            System.out.print("The target is at index " +result); 
+            System.out.print("The missing element is " +result); 
     }
 }   
         
