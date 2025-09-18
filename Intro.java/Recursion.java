@@ -196,5 +196,12 @@ public static int tilingProblem(int n){
     // }
 }
 
+// public static void main (String args[]){
+//     int a = 37;
+//     int b = 84;
+//     int c = 90;
+//     int d = 75;
+}
+
 
 
