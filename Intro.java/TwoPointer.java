@@ -37,6 +37,28 @@ public class TwoPointer {
         }
    return maxLen;
     }
+
+
+    public static int maximumCards(int cardPoints[], int k){
+           
+       int n = cardPoints.length;
+        int currentSum = 0;
+        
+
+        for (int i = 0; i < k; i++) {
+            currentSum += cardPoints[i];
+        }
+
+        int maxSum = currentSum;
+        
+
+        for (int i = 1; i <= k; i++) {
+            currentSum = currentSum - cardPoints[k - i] + cardPoints[n - i];
+            maxSum = Math.max(maxSum, currentSum);
+        }
+        
+        return maxSum;
+    }
     public static void main (String args[]){
         int[] arr = new int[7];
         arr[0] = 6;
@@ -47,7 +69,7 @@ public class TwoPointer {
         arr[5] = 54;
         arr[6] = 23;
 
-        int result = longestSubarraySum(arr, 195);
+        int result = maximumCards(arr, 195);
         System.out.println("The maximum sum is " +result);
 
     }
