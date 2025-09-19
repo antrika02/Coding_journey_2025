@@ -18,6 +18,25 @@ public class TwoPointer {
     }
     return maxSum;
     }
+
+    public static int longestSubarraySum(int arr[] , int k){
+        int l = 0;
+        int r = 0;
+        int sum = 0;
+        int maxLen = 0;
+        while (r < arr.length){
+            sum += arr[r];
+        while ( sum > k && l <= r){
+            sum -= arr[l];
+            l++;
+        }
+        if ( sum == k){
+            maxLen = Math.max(maxLen, r-l+1);
+        }
+        r++;
+        }
+   return maxLen;
+    }
     public static void main (String args[]){
         int[] arr = new int[7];
         arr[0] = 6;
@@ -28,7 +47,7 @@ public class TwoPointer {
         arr[5] = 54;
         arr[6] = 23;
 
-        int result = maxSum(arr, 3);
+        int result = longestSubarraySum(arr, 195);
         System.out.println("The maximum sum is " +result);
 
     }
