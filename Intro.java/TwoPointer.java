@@ -59,6 +59,26 @@ public class TwoPointer {
         
         return maxSum;
     }
+
+
+
+
+    public static int consecutiveOnes(int nums[]){
+        int left = 0, zeros = 0, maxLen = 0;
+        for(int right =0; right < nums.length; right++){
+            if(nums[right] == 0){
+                zeros++;
+            }
+            while(zeros > k){
+                if(nums[left] == 0){
+                    zeros--;
+                }
+                left++;
+            }
+            maxLen = Math.max(maxLen, right-left+1);
+        }
+        return maxLen;
+    }
     public static void main (String args[]){
         int[] arr = new int[7];
         arr[0] = 6;
@@ -69,7 +89,7 @@ public class TwoPointer {
         arr[5] = 54;
         arr[6] = 23;
 
-        int result = maximumCards(arr, 195);
+        int result = maximumCards(arr);
         System.out.println("The maximum sum is " +result);
 
     }
